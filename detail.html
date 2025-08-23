@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>www.errornews.com</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,700;1,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="https://unpkg.com/feather-icons"></script>
+
+    <link rel="stylesheet" href="css/detail.css" />
+  </head>
+  <body>
+    <header>
+      <div class="navbar">
+        <a href="#" class="navbar-logo">ErrorNews<span>.Com</span></a>
+        <div class="button">
+          <a id="button-edit" class="btn btn-edit"><i data-feather="edit"></i></a><!-- tombol untuk pindah ke halaman edit -->
+          <a id="button-delete" class="btn delete-button"><i data-feather="trash-2"></i></a><!-- tombol untuk menghapus berita -->
+        </div>
+      </div>
+    </header>
+    <nav class="navbar-second">
+      <div class="navbar-extra">
+        <a href="#" id="home"><i data-feather="home"></i></a><!--tombol untuk kembali ke halamman utama-->
+      </div>
+      <div class="navbar-nav">
+        <a href="category/international.html?kategori=1">Internasional</a>
+        <a href="category/national.html?kategori=2">Nasional</a>
+        <a href="category/sports.html?kategori=3">Olahraga</a>
+        <a href="category/political.html?kategori=4">Politik</a>
+        <a href="category/economy.html?kategori=5">Ekonomi</a>
+        <a href="category/health.html?kategori=6">Kesehatan</a>
+        <a href="category/culinary.html?kategori=7">Kuliner</a>
+        <a href="category/automotive.html?kategori=8">Otomotif</a>
+        <a href="category/infrastructure.html?kategori=9">Infrastruktur</a>
+      </div>
+    </nav>
+    <div class="layout"><!--bagian untuk -->
+      <div class="container-berita">
+        <div id="detail-berita">
+          <h1 id="judul"></h1><!--
+          <div class="info">
+            <div class="penulis">
+              <span id="penulis_id"></span>
+            </div>
+            <div class="tanggal">
+              <span id="tanggal_kejadian"></span>
+            </div>
+          </div>-->
+          <p><strong>Penulis:</strong> <span id="penulis_id"></span></p><!--untuk menampilkan penulis-->
+          <p><strong>Tanggal Kejadian:</strong> <span id="tanggal_kejadian"></span></p><!--untuk menampilkan tanggal kejadian-->
+          <p><strong>Kategori:</strong> <span id="kategori_id"></span></p><!--untuk menampilkan kategori berita-->
+          <img id="image" src="" alt="Gambar Berita"/><!--untuk menampilkan gambar-->
+          <div class="isi"><!--untuk menampilkan isi berita-->
+            <p id="isi"></p>
+          </div>
+          <p><strong>Tags:</strong> <span id="tags"></span></p><!--untuk menampilkan tags-->
+        </div>
+      </div>
+      <aside class="terpopuler"><!--untuk menampilkan bagian berita terpopuler-->
+        <h2>Terpopuler</h2>
+        <ol id="terpopuler-list"></ol><!--menampilkan berita terpopuler dalam bentuk list-->
+      </aside>
+    </div>
+    <footer>
+      <div class="container-footer">
+        <div class="footer-content">
+          <h3>Kontak Kami</h3>
+          <p><i data-feather="mail"></i>errornews@gmail.com</p>
+          <p><i data-feather="phone"></i>081234567890</p>
+          <p><i data-feather="map"></i>Ponorogo, Jawa Timur</p>
+        </div>
+        <div class="footer-content">
+          <h3>Tentang Kami</h3>
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+          Eius, consequatur sit dolore reiciendis adipisci commodi incidunt,
+          quod alias sequi, omnis dicta. At quos nam dolorum quam beatae 
+          blanditiis repellat voluptates.</p>
+        </div>
+        <div class="footer-content">
+          <h3>Ikuti Kami</h3>
+          <ul class="social-icons">
+          <li><a href="https://www.instagram.com/"><i data-feather="instagram"></i></a></li>
+          <li><a href="https://x.com"><i data-feather="twitter"></i></a></li>
+          <li><a href="https://www.facebook.com"><i data-feather="facebook"></i></a></li>
+          <li><a href="https://youtube.com"><i data-feather="youtube"></i></a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="bottom-bar">
+        <p><span>&copy; 2025 ErrorNews Group</span> . All rights reserved</p>
+      </div>
+    </footer>
+    <script>
+      feather.replace();
+      window.onload = function () {
+      const params = new URLSearchParams(window.location.search);// mengambil parameter id dari url
+      const id = params.get("id");
+
+      if (id) {
+        document.getElementById("button-edit").href = `edit.html?id=${id}`;//mengambil elemen html dan jika ditekan akan pindah ke halaman edit berdasarkan parameter id 
+      }
+      document.getElementById("home").addEventListener("click", function (e) {//mengambil elemen html dan jika ditekan akan pindah ke halaman utama 
+          e.preventDefault();
+          window.location.href = "index.html"; 
+      });
+    };  
+    </script>
+    <script src="js/detail.js"></script>
+  </body>
+</html>

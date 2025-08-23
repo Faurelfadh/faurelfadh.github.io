@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit Berita</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,700;1,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="https://unpkg.com/feather-icons"></script>
+
+    <link rel="stylesheet" href="css./edit.css" />
+  </head>
+  <body>
+    <header>
+      <div class="navbar-first">
+        <h1>EditBerita.<span>Com</span></h1>
+      </div>
+    </header>
+    <div class="container">
+      <form id="form-edit" method="POST" enctype="multipart/form-data" action="">
+        <div class="mb-2">
+          <label for="judul">Judul :</label>
+          <input
+            type="text"
+            id="judul"
+            name="judul"
+            class="form-control"
+            placeholder=""
+            required
+          />
+        </div>
+        <div class="mb-2">
+          <label for="penulis_id">Penulis :</label>
+          <select
+            id="penulis_id"
+            name="penulis_id"
+            class="form-control"
+            placeholder=""
+            required
+          >
+            <option value="" disabled selected>-- Pilih Penulis --</option>
+            <option value="1">SURYO HADININGRAT</option>
+            <option value="2">DAENG BATUBARA</option>
+            <option value="3">ALEX CROMBLONI</option>
+            <option value="4">FAUZAN AL-HAKIM</option>
+            <option value="5">I WAYAN MADE</option>
+          </select>
+        </div>
+        <div class="mb-2">
+          <label for="tanggal_kejadian">Tanggal Kejadian :</label>
+          <input
+            type="date"
+            id="tanggal_kejadian"
+            name="tanggal_kejadian"
+            class="form-control"
+            placeholder=""
+            required
+          />
+        </div>
+        <div class="mb-2">
+          <label for="kategori_id">Kategori :</label>
+          <select
+            id="kategori_id"
+            name="kategori_id"
+            class="form-control"
+            placeholder=""
+            required
+          >
+            <option value="" disabled selected>-- Pilih Kategori --</option>
+            <option value="1">Internasional</option>
+            <option value="2">Nasional</option>
+            <option value="3">Olahraga</option>
+            <option value="4">Politik</option>
+            <option value="5">Ekonomi</option>
+            <option value="6">Kesehatan</option>
+            <option value="7">Kuliner</option>
+            <option value="8">Otomotif</option>
+            <option value="9">Infrastruktur</option>
+          </select>
+        </div>
+        <div class="isi">
+          <label for="isi">Isi :</label>
+          <textarea
+            id="isi"
+            name="isi"
+            rows="30"
+            cols="159"
+            class="form-control"
+            placeholder=""
+            required
+          ></textarea>
+        </div>
+        <div class="mb-2">
+          <label for="tags">Tags :</label>
+          <input
+            type="text"
+            id="tags"
+            name="tags"
+            class="form-control"
+            placeholder=""
+            required
+          />
+        </div>
+        <div class="thumbnail"><!-- untuk menampilkan gambar sebelumnya karena bagian input tidak bisa langsung mengisi gambar sebelumya sebab alasan keamanan -->
+          <label for="preview-image">Preview Image :</label>
+          <img id="preview-image" src="" alt="Gambar saat ini" width="150"/><!-- pengaturan untuk menampilkan gambar sebelumnya -->
+        </div>
+        <div class="mb-2">
+          <label for="image">Image :</label>
+            <input
+              type="file"
+              id="image"
+              name="image"
+              class="form-control"
+              placeholder=""
+              required
+            />
+            <a id="button-back" class="btn btn kembali">Kembali</a>
+            <button type="submit" class="btn btn-simpan">Simpan</button>
+        </div>
+      </form>
+    </div>
+    <script> 
+    window.onload = function () {
+      const params = new URLSearchParams(window.location.search);
+      const id = params.get("id");
+
+      if (id) {
+        document.getElementById("button-back").href = `detail.html?id=${id}`;//mengambil elemen html dan jika ditekan akan kembali ke halaman detail sebelumnya
+      }
+    }; 
+    </script>
+    <script src="js/edit.js"></script>
+  </body>
+</html>

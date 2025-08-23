@@ -1,0 +1,133 @@
+:root {
+  --primary: #000fff;
+  --secondary: #010101;
+  --bg: #fff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--bg);
+  color: #010101;
+}
+
+.navbar-first {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-style: italic;
+  font-size: 1rem;
+  padding: 0.5rem 7%;
+  background-color: #1e90ff;
+  color: #fff;
+  border-bottom: 2px solid #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+}
+
+.navbar-first span {
+  color: var(--bg);
+}
+
+.container {
+  position: relative;
+  max-width: 1250px;
+  margin: 1rem;
+  margin-top: 5rem;
+  padding: 1.5rem;
+  padding-bottom: 2rem;
+  font-size: 1rem;
+  background-color: #7fffd4;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  border-radius: 8px;
+}
+
+input[type=text] {
+  width: 100%;
+  padding: 12px 20px; 
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=file] {
+  width: 100%;
+  padding: 12px 20px; 
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+  box-sizing: border-box;
+}
+
+.mb-2 input[type="date"],
+.mb-2 input[type="file"],
+.mb-2 select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+.isi textarea {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  margin-top: 6px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+form .mb-2 {
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  margin-top: 10px;
+  text-decoration: none;
+  border-radius: 4px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.btn-kembali {
+  background-color: #006400;
+  color: #fff;
+  width: 150px;
+  height: 40px;
+}
+
+.btn-simpan {
+  background-color: #000fff ;
+  color: #fff;
+  font-size: 1.2rem;
+  width: 150px;
+  height: 40px;
+}
+
+.btn-kembali:hover {
+  color: #010101;
+}
+
+.btn-simpan:hover {
+  color: #010101;
+}

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>www.errornews.com</title><!-- judul web -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" /><!-- untuk mempercepat koneksi ke browser-->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /><!-- untuk mengunduh file font dari file penyimpanan file google tanapa masalah cors-->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,700;1,700&display=swap"
+      rel="stylesheet"
+    /><!-- untuk mengambil font dan ukuran font dari web google font -->
+
+    <script src="https://unpkg.com/feather-icons"></script><!-- untuk mengambil icon dari web feather icons -->
+
+    <link rel="stylesheet" href="css/style.css" /><!-- untuk menambahkan gaya css pada web -->>
+  </head>
+  <body>
+    <header><!-- untuk membuat kotak pada bagian atas web yang berisi judul atau logo -->
+      <div class="navbar">
+        <a href="#" class="navbar-logo">ErrorNews<span>.Com</span></a><!-- logo atau judul web -->
+        <a href="tambah.html" class="tambah-button"><i data-feather="plus-square"></i></a><!-- tombol untuk berpindah ke halaman tambah -->
+      </div>
+    </header>
+    <nav class="navbar-second"><!-- untuk membuat kotak pada bagian atas web yang berisi tombol atau tautan untuk berpindah ke halaman lain -->
+      <div class="navbar-nav"><!-- bagian untuk memilih kategori berita -->
+        <a href="category/international.html?kategori=1">Internasional</a><!-- ketika salah satu kategori ditekan, akan berpindah ke halaman kategori yang ditekan dan akan menampilkan berita yang sesuai dengam kategori yang sudah kita tekan -->
+        <a href="category/national.html?kategori=2">Nasional</a>
+        <a href="category/sports.html?kategori=3">Olahraga</a>
+        <a href="category/political.html?kategori=4">Politik</a>
+        <a href="category/economy.html?kategori=5">Ekonomi</a>
+        <a href="category/health.html?kategori=6">Kesehatan</a>
+        <a href="category/culinary.html?kategori=7">Kuliner</a>
+        <a href="category/automotive.html?kategori=8">Otomotif</a>
+        <a href="category/infrastructure.html?kategori=9">Infrastruktur</a>
+      </div>
+    </nav>
+    <main class="container">
+      <section class="terkini"><!-- bagian untuk menampilkan berita terbaru atau terkini -->
+        <h2>Berita Terkini</h2><!-- judul -->
+        <div id="terkini-list"></div><!-- menampilkan setiap berita dalam bentuk kotak individu -->
+      </section>
+      <aside class="terpopuler"><!-- bagian untuk menampilkan berita paling sering dilihat atau terpopuler-->
+        <h2>Terpopuler</h2>
+        <ol id="terpopuler-list"></ol><!-- untuk memberikan nomor pada setiap data yang ditampilkan dari database -->
+      </aside>
+    </main>
+    <footer><!-- untuk membuat kotak pada bagian bawah web yang berisi informasi tentang web tersebut, seperti kontak, hak cipta, alamat, media sosial, dll-->
+      <div class="container-footer">
+        <div class="footer-content">
+          <h3>Kontak Kami</h3>
+          <p><i data-feather="mail"></i>errornews@gmail.com</p>
+          <p><i data-feather="phone"></i>081234567890</p>
+          <p><i data-feather="map"></i>Ponorogo, Jawa Timur</p>
+        </div>
+        <div class="footer-content">
+          <h3>Tentang Kami</h3>
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+          Eius, consequatur sit dolore reiciendis adipisci commodi incidunt,
+          quod alias sequi, omnis dicta. At quos nam dolorum quam beatae 
+          blanditiis repellat voluptates.</p>
+        </div>
+        <div class="footer-content">
+          <h3>Ikuti Kami</h3>
+          <ul class="social-icons"><!-- ketika salah satu logo media sosial ditekan akan langsung berpindah ke halaman media sosial tersebut -->
+          <li><a href="https://www.instagram.com/"><i data-feather="instagram"></i></a></li>
+          <li><a href="https://x.com"><i data-feather="twitter"></i></a></li>
+          <li><a href="https://www.facebook.com"><i data-feather="facebook"></i></a></li>
+          <li><a href="https://youtube.com"><i data-feather="youtube"></i></a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="bottom-bar"><!-- bagian kotak footer paling bawah untuk menempatkan hak cipta -->
+        <p><span>&copy; 2025 ErrorNews Group</span> . All rights reserved</p>
+      </div>
+    </footer>
+    <script>
+      feather.replace(); // untuk mengganti semua elemen yang memiliki atribut data-feather  dengan markup svg yang sesuai dengan nilai atribut tersebut
+    </script>
+    <script src="js/script.js"></script><!--untuk mengambil file script js-->
+  </body>
+</html>

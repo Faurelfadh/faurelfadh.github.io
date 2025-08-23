@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Berita Kuliner</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,700;1,700&display=swap"
+        rel="stylesheet"
+        />
+
+        <script src="https://unpkg.com/feather-icons"></script>
+
+        <link rel="stylesheet" href="../css/category.css" />
+    </head>
+    <body>
+        <header>
+            <div class="navbar">
+                <a href="#" class="navbar-logo">ErrorNews<span>.Com</span></a>
+            </div>
+        </header>
+        <nav class="navbar-second">
+            <div class="navbar-extra">
+                <a href="#" id="home"><i data-feather="home"></i></a>
+            </div>
+            <div class="navbar-nav">
+                <a href="international.html?kategori=1">Internasional</a>
+                <a href="national.html?kategori=2">Nasional</a>
+                <a href="sports.html?kategori=3">Olahraga</a>
+                <a href="political.html?kategori=4">Politik</a>
+                <a href="economy.html?kategori=5">Ekonomi</a>
+                <a href="health.html?kategori=6">Kesehatan</a>
+                <a href="culinary.html?kategori=7">Kuliner</a>
+                <a href="automotive.html?kategori=8">Otomotif</a>
+                <a href="infrastructure.html?kategori=9">Infrastruktur</a>
+            </div>
+        </nav>
+        <main class="container">
+            <section class="terkini">
+                <h2>Berita Terkini</h2>
+                <div id="terkini-list"></div>
+            </section>
+            <aside class="terpopuler">
+                <h2>Terpopuler</h2>
+                <ol id="terpopuler-list"></ol>
+            </aside>
+        </main>
+        <footer>
+            <div class="container-footer">
+                <div class="footer-content">
+                    <h3>Kontak Kami</h3>
+                    <p><i data-feather="mail"></i>errornews@gmail.com</p>
+                    <p><i data-feather="phone"></i>081234567890</p>
+                    <p><i data-feather="map"></i>Ponorogo, Jawa Timur</p>
+                </div>
+                <div class="footer-content">
+                    <h3>Tentang Kami</h3>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                    Eius, consequatur sit dolore reiciendis adipisci commodi incidunt,
+                    quod alias sequi, omnis dicta. At quos nam dolorum quam beatae 
+                    blanditiis repellat voluptates.</p>
+                </div>
+                <div class="footer-content">
+                    <h3>Ikuti Kami</h3>
+                    <ul class="social-icons">
+                    <li><a href="https://www.instagram.com/"><i data-feather="instagram"></i></a></li>
+                    <li><a href="https://x.com"><i data-feather="twitter"></i></a></li>
+                    <li><a href="https://www.facebook.com"><i data-feather="facebook"></i></a></li>
+                    <li><a href="https://youtube.com"><i data-feather="youtube"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="bottom-bar">
+                <p><span>&copy; 2025 ErrorNews Group</span> . All rights reserved</p>
+            </div>
+        </footer>
+        <script>
+            feather.replace();
+            window.onload = function () {
+            const params = new URLSearchParams(window.location.search);
+            const id = params.get("id");
+            loadKategoriBerita("Kuliner");
+
+            document.getElementById("home").addEventListener("click", function (e) {
+                e.preventDefault();
+                window.location.href = "../index.html"; 
+            });
+            };  
+        </script>
+    <script src="../js/category.js"></script>
+    </body>
+</html>
