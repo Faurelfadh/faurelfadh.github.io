@@ -123,6 +123,7 @@ body {
   border-radius: 1rem;/*
   box-shadow: 0 0 10px rgba(0,0,0,0.1);*/
   padding-left: 2rem;
+  padding-right: 2rem;
   margin-top: 1rem;
   margin-bottom: 1rem;
   position: relative;
@@ -137,6 +138,10 @@ body {
 #detail-berita p {
   font-size: 1.2rem;
   font-weight: 500;
+}
+
+#detail-berita a:hover {
+  color: #000fff;
 }
 
 #detail-berita span {

@@ -23,6 +23,10 @@ fetch(`http://localhost:3100/api/berita/${id}`)//untuk mengambil data berita dar
             document.getElementById('image').src = `http://localhost:3100/uploads/${data.image}`;//mengambil gambar yang sudah diupload dan disimpan di folder uploads
             document.getElementById('isi').textContent = data.isi;//mengambil data dari tabel berita
             
+            const penulis = document.getElementById("penulis_id");
+            penulis.innerText = data.nama_penulis;
+            penulis.href = `penulis.html?id=${data.penulis_id}`;
+
             const deleteButton = document.querySelector('.delete-button');
             deleteButton.addEventListener('click', () => {
                 hapusBerita(data.id);

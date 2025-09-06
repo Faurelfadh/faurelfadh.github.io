@@ -91,10 +91,18 @@ app.get('/api/berita/:id', async (req, res) => {
     const query = `
     SELECT 
     b.id, b.judul, b.tanggal_kejadian, b.waktu_dibuat, 
-    b.isi, b.image, b.tags, b.status, w.nama_penulis, k.kategori
+    b.isi, b.image, b.tags, b.status, w.id AS penulis_id, w.nama_penulis, k.kategori
     FROM berita b JOIN data_wartawan w ON b.penulis_id = w.id
     JOIN kategori_berita k ON b.kategori_id = k.id
     WHERE b.id = $1`;
+
+    /*const query = `
+    SELECT 
+    b.id, b.judul, b.tanggal_kejadian, b.waktu_dibuat, 
+    b.isi, b.image, b.tags, b.status, w.nama_penulis, k.kategori
+    FROM berita b JOIN data_wartawan w ON b.penulis_id = w.id
+    JOIN kategori_berita k ON b.kategori_id = k.id
+    WHERE b.id = $1`;*/
 
     const result = await client.query(query, [id]);
     if (result.rows.length === 0) {
@@ -135,6 +143,21 @@ app.get('/api/data_wartawan', (req, res) => {
             res.status(500).json({ error: "Gagal mengambil data wartawan" });
         } else {
             res.json(result.rows);
+        }
+    });
+});
+
+app.get('/api/penulis/:id', (req, res) => {
+    const id = req.params.id;
+    const query = 'SELECT id, nama_penulis, kontak, alamat FROM data_wartawan WHERE id = $1';
+    client.query(query, [id], (err, result) => {
+        if (err) {
+            console.error("Gagal mengambil data wartawan:", err);
+            res.status(500).json({ error: "Gagal mengambil data wartawan" });
+        } else if (result.rows.length === 0) {
+            res.status(404).json({ error: "Penulis tidak ditemukan" });
+        } else {
+            res.json(result.rows[0]); // kirim hanya satu object
         }
     });
 });

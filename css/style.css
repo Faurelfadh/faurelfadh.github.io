@@ -63,7 +63,7 @@ body {
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  padding: 1.2rem 3%;
+  padding: 1.2rem 7%;
   background-color: #1e90ff;
   border-bottom: 1.5px solid #fff;
   position: fixed;
@@ -79,7 +79,7 @@ body {
   display: inline-block;
   font-size: 1.2rem;
   margin: 0 1rem;
-  padding: 0 1.5rem;
+  padding: 0 1rem;
 }
 
 .navbar-second .navbar-nav a:hover {
@@ -101,7 +101,7 @@ body {
 .container {
   display: flex;
   flex-wrap: wrap;
-  padding-top: 10rem;
+  padding-top: 9rem;
   margin-right: 3rem;
   margin-left: 3rem;
   gap: 2rem;
@@ -121,7 +121,7 @@ body {
 }
 
 .terkini h2, .terpopuler h2 {
-  padding-top: 1.3rem;
+  padding-top: 1rem;
   border-bottom: 2px solid #ccc;
   padding-bottom: 0.5rem;
   margin-bottom: 1rem;
@@ -156,7 +156,6 @@ body {
   height: auto;
 }
 
-
 .terpopuler ol {
   padding-left: 1rem;
 }
@@ -168,7 +167,7 @@ body {
 #terkini-list {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 1rem;
   margin-bottom: 24px;
 }
 
@@ -332,8 +331,8 @@ footer a:hover {
   }
   
   .container {
-    margin-top: 3rem;
-    padding-bottom: 3rem;
+    margin-top: 3rem;/*
+    padding-bottom: 3rem;/*mengatur jarak antara container dan navbar*/
   }
 
   .container-footer {
