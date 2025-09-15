@@ -25,12 +25,12 @@ fetch(`http://localhost:3100/api/berita/${id}`)//untuk mengambil data berita dar
             
             const penulis = document.getElementById("penulis_id");
             penulis.innerText = data.nama_penulis;
-            penulis.href = `penulis.html?id=${data.penulis_id}`;
+            penulis.href = `penulis.html?id=${data.penulis_id}`;/*
 
             const deleteButton = document.querySelector('.delete-button');
             deleteButton.addEventListener('click', () => {
                 hapusBerita(data.id);
-            });//untuk memanggil fungsi hapusBerita dan akan menghapus berita yang sedang ditampilkkan
+            });//untuk memanggil fungsi hapusBerita dan akan menghapus berita yang sedang ditampilkkan*/
         }
     })
     .catch(err => {
@@ -43,7 +43,7 @@ fetch(`http://localhost:3100/api/berita/${id}`)//untuk mengambil data berita dar
     const d = new Date(tanggal);
     return d.toLocaleDateString("id-ID", { day: 'numeric', month: 'long', year: 'numeric' });
     };// untuk mengubah format penanggalan saat menampilkannya di detail
-
+    /*
     function hapusBerita(id) {//untuk menghapus berita berdasarkan id
         if (confirm("Yakin ingin menghapus berita ini?")) {//menampilkan konfirmasi sebelum menghapus berita
             fetch(`http://localhost:3100/api/berita/${id}`, {//mengirim endpoint hapus untuk menghapus data berdasarkan parameter id
@@ -58,7 +58,7 @@ fetch(`http://localhost:3100/api/berita/${id}`)//untuk mengambil data berita dar
                 console.error("Gagal menghapus berita", err);//jika gagal akan menampilkan pesan error/gagal
             });
         }
-    };
+    };*/
 
     fetch("http://localhost:3100/api/berita-populer")//mengambil data berita terpopuler dari database dan menampilkannya dalam bentuk list
     .then(response => response.json())

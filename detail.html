@@ -19,11 +19,11 @@
   <body>
     <header>
       <div class="navbar">
-        <a href="#" class="navbar-logo">ErrorNews<span>.Com</span></a>
+        <a href="#" class="navbar-logo">ErrorNews<span>.Com</span></a><!--
         <div class="button">
-          <a id="button-edit" class="btn btn-edit"><i data-feather="edit"></i></a><!-- tombol untuk pindah ke halaman edit -->
-          <a id="button-delete" class="btn delete-button"><i data-feather="trash-2"></i></a><!-- tombol untuk menghapus berita -->
-        </div>
+          <a id="button-edit" class="btn btn-edit"><i data-feather="edit"></i></a>
+          <a id="button-delete" class="btn delete-button"><i data-feather="trash-2"></i></a>
+        </div>-->
       </div>
     </header>
     <nav class="navbar-second">
@@ -94,11 +94,11 @@
       feather.replace();
       window.onload = function () {
       const params = new URLSearchParams(window.location.search);// mengambil parameter id dari url
-      const id = params.get("id");
-
+      const id = params.get("id");/*
+      
       if (id) {
         document.getElementById("button-edit").href = `edit.html?id=${id}`;//mengambil elemen html dan jika ditekan akan pindah ke halaman edit berdasarkan parameter id 
-      }
+      }*/
       document.getElementById("home").addEventListener("click", function (e) {//mengambil elemen html dan jika ditekan akan pindah ke halaman utama 
           e.preventDefault();
           window.location.href = "index.html"; 
