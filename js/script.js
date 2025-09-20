@@ -51,3 +51,12 @@ function renderTerpopuler(populerArray) {// untuk menampilkan data dari database
     terpopulerList.appendChild(li);// untuk menambahkan elemen li kedalam elemen yang disimpan di variabel terpopulerList
   });
 }
+
+document.getElementById('btnLogout').addEventListener('click', function (e) {
+  e.preventDefault();
+
+  const yakin = confirm('Yakin ingin logout?');
+  if (yakin) {
+    window.location.href = 'login.html';
+  }
+})

@@ -1,12 +1,15 @@
+//import express from 'express';
 const express = require('express');
 const bodyParser = require('body-parser');
 const client = require('./database');
+//import cors from('cors');
 const cors = require('cors');
 const app = express();
 const multer = require('multer');
 const path =  require('path');
+const bcrypt = require('bcryptjs')
 
-app.use(express.static(path.join(__dirname)));
+//app.use(express.static(path.join(__dirname)));
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 app.use(cors());
 app.use(bodyParser.json())
@@ -34,17 +37,7 @@ const storage = multer.diskStorage({
 });
 
 const upload = multer({ storage });
-/*
-app.get('/api/berita', (req, res) => {
-    client.query(`SELECT * FROM berita WHERE status = 1  ORDER BY id DESC LIMIT 10`, (err, result) => {
-        if(err) {
-            console.error(err);
-            res.status(500).json({ error: 'Gagal mengambil berita'});
-        } else {
-            res.send(result.rows)
-        }
-    })
-})*/
+
 /* untuk menampilkan semua data tabel berita yang berstatus = 1 di bagian berita terkini */
 app.get('/api/berita', async (req, res) => {
   const { kategori } = req.query;
@@ -95,14 +88,6 @@ app.get('/api/berita/:id', async (req, res) => {
     FROM berita b JOIN data_wartawan w ON b.penulis_id = w.id
     JOIN kategori_berita k ON b.kategori_id = k.id
     WHERE b.id = $1`;
-
-    /*const query = `
-    SELECT 
-    b.id, b.judul, b.tanggal_kejadian, b.waktu_dibuat, 
-    b.isi, b.image, b.tags, b.status, w.nama_penulis, k.kategori
-    FROM berita b JOIN data_wartawan w ON b.penulis_id = w.id
-    JOIN kategori_berita k ON b.kategori_id = k.id
-    WHERE b.id = $1`;*/
 
     const result = await client.query(query, [id]);
     if (result.rows.length === 0) {
@@ -176,6 +161,30 @@ app.post('/api/berita', upload.single('image'), async (req, res) => {
     console.error("Gagal menambahkan berita", err);
     res.status(500).json({error:"Gagal menambahkan berita"});
   }
+});
+
+app.post('/login', async (req, res)  => {
+    const { user_admin, password } = req.body;
+    try {
+        const query = 'SELECT * FROM data_wartawan WHERE user_admin = $1 LIMIT 1';
+        const result = await client.query(query, [user_admin]);
+
+    if (result.rows.length === 0) {
+        return res.status(401).json({ success: false, message: 'Username atau Password salah!' });
+    }
+
+    const user =  result.rows[0];
+
+    const match = await bcrypt.compare(password, user.password);
+    if (!match) {
+        return res.status(401).json({ success: false, message: 'Password salah!' });
+    }
+
+    res.json({ success: true, message: 'Login berhasil!', user: { id: user.id, nama: user.nama_penulis } });
+    } catch (err) {
+        console.error('Error login:', err);
+        res.status(500).json({ success: false, message: 'Terjadi kesalahan server' });
+    }
 });
 
 /* untuk mengupdate data yang sudah ada didalam tabel berita berdasarkan id */

@@ -1,0 +1,8 @@
+// jalankan diterminal node migrate-password.js
+// cek isi tabel SELECT id, password FROM data_wartawan;
+// ubah password manual 
+// const newHash = await bcrypt.hash('passwordBaru', 10);
+// await client.query(
+  // 'UPDATE data_wartawan SET password=$1 WHERE user_admin=$2',
+  // [newHash, 'suryohadi@gmail.com']
+// );

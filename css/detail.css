@@ -69,7 +69,7 @@ body {
 }
 /*
 .navbar-second .navbar-nav a:hover {
-  color: #010101;
+  color: var(--bg);
 }
 */
 .navbar-second .navbar-nav a::after {

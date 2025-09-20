@@ -39,7 +39,7 @@ body {
   font-weight: 700;
   color: #010101;
   font-style: italic;
-  background-color: #fff;
+  /*background-color: #fff;*/
 }
 
 .navbar .navbar-logo span {
@@ -64,11 +64,13 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 1.2rem 7%;
+  margin-top: 10px;
   background-color: #1e90ff;
   border-bottom: 1.5px solid #fff;
-  position: fixed;
-  min-height: 50px;
-  top: 5rem;
+  min-height: 5px;
+  position: fixed;/*
+  min-height: 50px;*/
+  top: 4rem;
   left: 0;
   right: 0;
   z-index: 9999;
@@ -96,6 +98,15 @@ body {
 
 .navbar-second .navbar-nav a:hover::after {
   transform: scaleX(0.5);
+}
+
+.navbar-extra a {
+  color: #fff;
+  display: flex;
+}
+
+.navbar-extra a:hover {
+  color: #000fff;
 }
 
 .container {
