@@ -1,15 +1,7 @@
 const params = new URLSearchParams(window.location.search); //mengambil parameter id dari url
 const id = params.get("id");
-/*const idBerita = params.get("id");*/
 const terkiniList = document.getElementById("terkini-list"); // untuk mengambil elemen html dengan id
 const terpopulerList = document.getElementById("terpopuler-list");
-/*
-const homeBtn = document.getElementById("home");
-if (idBerita) {
-  homeBtn.href = `detail.html?id=${idBerita}`;
-} else {
-  homeBtn.href = "index.html"
-}*/
 
 if (!id) {
   //jika id tidak ditemukan akan menampilkan pesan error dan akan langsung pindah ke halaman utama
@@ -26,10 +18,7 @@ fetch(`http://localhost:3100/api/penulis/${id}`) //untuk mengambil data berita d
     } else {
       const penulis = document.getElementById("penulis_id");
       penulis.innerText = data.nama_penulis;
-      penulis.href = `penulis.html?id=${data.penulis_id}`;/*
-      penulis.href = `penulis.html?id=${data.penulis_id}&berita=${idBerita}`;
-      document.getElementById("kontak").textContent = data.kontak; //mengambil data dari tabel berita
-      document.getElementById("alamat").textContent = data.alamat;*/ //mengambil data dari tabel berita
+      penulis.href = `penulis.html?id=${data.penulis_id}`;
     }
   })
   .catch((err) => {

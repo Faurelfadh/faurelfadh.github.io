@@ -1,8 +1,6 @@
-//import express from 'express';
 const express = require('express');
 const bodyParser = require('body-parser');
 const client = require('./database');
-//import cors from('cors');
 const cors = require('cors');
 const app = express();
 const multer = require('multer');

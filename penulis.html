@@ -40,20 +40,14 @@
     </nav>
     <div class="layout"><!--bagian untuk -->
       <div class="container-berita">
-        <div id="detail-berita"><!--
-          <p><a href="#"><i data-feather="user"></i><span class="penulis_id" id="penulis_id"></span></a></p>
-          <p><a href="#"><i data-feather="phone"></i><span class="kontak" id="kontak"></span></a></p>
-          <p><a href="#"><i data-feather="map"></i><span class="alamat" id="alamat"></span></a></p>-->
+        <div id="detail-berita">
           <div class="logo-berita">
             <a href="#" class="logo-penulis">ErrorNews<span>.Com</span></a>
           </div>
           <div class="profil-penulis">
             <img src="img/default-profile.jpg" id="foto-penulis" alt="Foto Penulis">
           </div>
-          <p><span class="penulis_id" id="penulis_id"></span></p><!--
-          <p><strong>Nama Penulis:</strong> <span class="penulis_id" id="penulis_id"></span></p>
-          <p><strong>Kontak:</strong> <span class="kontak" id="kontak"></span></p>
-          <p><strong>Alamat:</strong> <span class="alamat" id="alamat"></span></p>-->
+          <p><span class="penulis_id" id="penulis_id"></span></p>
           <div class="sosmed-penulis">
             <p><a href="#"><i data-feather="facebook"></i></a></p>
             <p><a href="#"><i data-feather="twitter"></i></a></p>
@@ -103,11 +97,7 @@
       window.onload = function () {
       const params = new URLSearchParams(window.location.search);// mengambil parameter id dari url
       const id = params.get("id");
-      /*
-      if (id) {
-        document.getElementById("home").href = `detail.html?id=${id}`;
-      }
-    };*/
+      
       document.getElementById("home").addEventListener("click", function (e) {//mengambil elemen html dan jika ditekan akan pindah ke halaman utama 
           e.preventDefault();
           window.location.href = "index.html"; 
