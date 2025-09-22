@@ -27,12 +27,39 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 1rem 7%;
+  background-color: #1e90ff;
+  border-bottom: 2px solid #1e90ff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+}
+
+.navbar-first .navbar-logo {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #fff;
+  font-style: italic;
+  /*background-color: #fff;*/
+}
+
+.navbar-first .navbar-logo span {
+  color: var(--bg);
+}
+
+/*
+.navbar-first {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   font-style: italic;
   font-size: 1rem;
   padding: 0.5rem 7%;
   background-color: #1e90ff;
-  color: #fff;
-  /*border-bottom: 2px solid #fff;*/
+  color: #fff;*/
+  /*border-bottom: 2px solid #fff;*//*
   position: fixed;
   top: 0;
   left: 0;
@@ -42,7 +69,7 @@ body {
 
 .navbar-first span {
   color: var(--bg);
-}
+}*/
 
 .container {
   position: relative;
