@@ -15,9 +15,9 @@
 
 body {
   font-family: "Poppins", sans-serif;
-  /*background-color: var(--bg);*/
+  background-color: var(--bg);
   color: #010101;
-  background-image: url(../img/1.jpg);
+  /*background-image: url(../img/1.jpg);*/
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -27,7 +27,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 7%;
+  padding: 0.5rem 7%;
   background-color: #1e90ff;
   border-bottom: 2px solid #1e90ff;
   position: fixed;
@@ -38,7 +38,7 @@ body {
 }
 
 .navbar-first .navbar-logo {
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: 700;
   color: #fff;
   font-style: italic;
@@ -57,6 +57,7 @@ body {
   padding: 1.5rem;
   padding-bottom: 2rem;
   font-size: 1rem;
+  background-color: #B3E5FC;
   /*background-color: #7fffd4;*/
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
   border-radius: 8px;
@@ -95,7 +96,7 @@ input[type=file] {
 }
 
 label {
-  color: #fff;
+  color: #010101;
 }
 
 .isi textarea {

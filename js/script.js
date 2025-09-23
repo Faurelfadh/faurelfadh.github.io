@@ -21,7 +21,7 @@ function renderTerkini(beritaArray) {// untuk menampilkan data berita dari datab
     <img src="${item.image ? `http://localhost:3100/uploads/${item.image}` : 'default-image.jpg'}" alt="Gambar Berita" style="width:50px ; height=auto;"/>
     <div class="content">
     <h3>${item.judul}</h3>
-    <div class="date">${item.tanggal_kejadian}</div>
+    <div class="date">${item.tanggal_kejadian}</div> 
     </div>
     </a>
     `;
